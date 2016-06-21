@@ -1,3 +1,9 @@
-<p>Thanks for subscribing <%= @full_name %></p>
+if @city.to_s.strip.length == 0
+  <p>Thanks for subscribing <%= @full_name %></p>
+
+else
+  <p>Thanks for subscribing <%= @full_name %>, we will be sending you information about <%= @city %></p>
+
+
 
 <a href="/">Home</a>

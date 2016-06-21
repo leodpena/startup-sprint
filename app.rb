@@ -17,6 +17,7 @@ class App < Sinatra::Base
 
     if !@email.match(/.+@.+/)
       redirect to('/?error=email')
+      full_name = @full_name
     end
 
     erb :subscribe
@@ -24,7 +25,7 @@ class App < Sinatra::Base
 
   get '/reddit' do
     # TODO: we can probably get the listings with something like:
-    # JSON.parse(RestClient.get('http://reddit.com/.json'))
+    JSON.parse(RestClient.get('http://reddit.com/.json'))
 
     @listings = []
 
@@ -36,12 +37,19 @@ class App < Sinatra::Base
     erb :rainbow
   end
 
+<<<<<<< HEAD
   get '/team' do
 
     erb :team
   end
 
 
+=======
+  get '/youtube' do
+    erb :youtube
+  end
+
+>>>>>>> 50d5ba84c8c6ab14e6d88c07bf7bf8bd79ca17fa
   get '/schedule' do
     @today = [
       ['7:00am', 'Wake up'],

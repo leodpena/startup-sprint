@@ -1,0 +1,39 @@
+
+body{
+	background: url(http://www.kurtshafferphotographs.com/images/Cleveland_Lights_Up_.jpg);
+	background-size: cover;
+
+}
+
+.box {
+  margin: 0 auto;
+  background-color: #2DB82D;
+  width: 60px; 
+  height: 30px;
+  padding: 10px;
+  opacity: 0.75;
+}
+
+header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-family: ‘Helvetica Neue’, Helvetica; 
+  font-weight: 200;
+}
+
+h1 {
+  font-family: ‘Helvetica Neue’, Helvetica; 
+  font-weight: 200;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 3rem;
+  white-space: nowrap;
+}
+
+
+
+

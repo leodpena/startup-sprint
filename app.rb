@@ -5,13 +5,16 @@ class App < Sinatra::Base
     @error = params['error']
     @name = params['name']
     @city = params['city']
-    erb :home
-end
+    erb :splash
+  end
+
+
 
 get '/home' do
     @error = params['error']
-    redirect to('/')
-end
+    # redirect to('/')
+    erb :home
+  end
 
 post '/subscribe' do
     @full_name = params[:full_name]
@@ -26,7 +29,6 @@ post '/subscribe' do
         @last_name = names[1]
       redirect to('/?error=email&name=' + @full_name + '&city=' + @city)
     end
-
     erb :subscribe
 end
 
@@ -44,19 +46,25 @@ get '/reddit' do
     @url = url
     @thumbnail = thumbnail
 end
-end
+
 
 data = JSON.parse(RestClient.get('http://reddit.com/.json'))
 
 @listings = data['t3'].map { |rd| Link.new(rd['title'], rd['url'], rd['thumbnail'])}
 
 erb :reddit
-end
+
 
 get '/rainbow' do
 
     erb :rainbow
-end
+  end
+
+
+get '/splash' do
+    
+    erb :splash
+  end
 
   get '/team' do
     erb :team
@@ -94,8 +102,10 @@ end
     ]
 
     erb :schedule
-end
-end
+    end
+
+
+
 
 class App < Sinatra::Base
     get '/fib/:n' do

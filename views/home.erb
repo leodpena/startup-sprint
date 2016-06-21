@@ -6,6 +6,7 @@
 
 <% if @error == 'email' %>
   <p style="color: red;">Please enter a valid email</p>
+<<<<<<< Updated upstream
   <label for="full-name">Full Name</label>
   <input type="text" id="full-name" name="full_name" value=<%= @name %> required>
 
@@ -20,6 +21,11 @@
   <a href="/splash">splash</a>
 <% else %>
 
+=======
+  <input type="text" id="full-name" value=full_name >
+<% else %>
+<form method=POST action="/subscribe">
+>>>>>>> Stashed changes
   <label for="full-name">Full Name</label>
   <input type="text" id="full-name" name="full_name" required>
   <label for="email">Email</label>

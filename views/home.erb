@@ -3,27 +3,23 @@
 
 <h3>Subscribe to the Startup Sprint newsletter</h3>
   <form method=POST action="/subscribe">
+
 <% if @error == 'email' %>
   <p style="color: red;">Please enter a valid email</p>
-  
+  <label for="full-name">Full Name</label>
+  <input type="text" id="full-name" name="full_name" value=<%= @name %> required>
 
-  <!--<label for="full-name">Full Name</label>
-  <input type="text" id="full-name" name="full_name" value=@full_name required>
   <label for="email">Email</label>
-  -->
-
-  <!--<% form_for @name do |name_form| %>
-  Full Name: <% name_form.text_field :full_name %>
-  <% end %> -->
-
   <input type="text" id="email" name="email" placeholder="address@domain.com" required autofocus="true">
+
 <% else %>
+
   <label for="full-name">Full Name</label>
   <input type="text" id="full-name" name="full_name" required>
   <label for="email">Email</label>
-  <% end %>
   <input type="text" id="email" name="email" placeholder="address@domain.com" required>
   <label for="city">City</label>
   <input type="city" id="city" name="city">
   <input type="Submit">
 </form>
+<% end %>

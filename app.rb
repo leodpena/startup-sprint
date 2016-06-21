@@ -45,16 +45,25 @@ class App < Sinatra::Base
 
     erb :reddit
   end
-  
+
   get '/rainbow' do
-    
+
     erb :rainbow
   end
 
+<<<<<<< HEAD
+  get '/team' do
+
+    erb :team
+  end
+
+
+=======
   get '/youtube' do
     erb :youtube
   end
 
+>>>>>>> 50d5ba84c8c6ab14e6d88c07bf7bf8bd79ca17fa
   get '/schedule' do
     @today = [
       ['7:00am', 'Wake up'],

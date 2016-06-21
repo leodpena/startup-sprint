@@ -6,6 +6,11 @@ class App < Sinatra::Base
     erb :home
   end
 
+  get '/home' do
+    @error = params['error']
+    redirect to('/')
+  end
+
   post '/subscribe' do
     @full_name = params[:full_name]
     @email = params[:email]

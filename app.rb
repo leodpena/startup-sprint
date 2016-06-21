@@ -5,6 +5,7 @@ class App < Sinatra::Base
     @error = params['error']
 <<<<<<< Updated upstream
     @name = params['name']
+    @city = params['city']
     erb :home
 =======
     erb :splash
@@ -20,9 +21,10 @@ class App < Sinatra::Base
   post '/subscribe' do
     @full_name = params[:full_name]
     @email = params[:email]
+    @city = params[:city]
 
     if !@email.match(/.+@.+/)
-      redirect to('/?error=email&name=' + @full_name)
+      redirect to('/?error=email&name=' + @full_name + '&city=' + @city)
     end
 
     erb :subscribe

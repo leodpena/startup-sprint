@@ -25,7 +25,7 @@ class App < Sinatra::Base
 
   get '/reddit' do
     # TODO: we can probably get the listings with something like:
-    # JSON.parse(RestClient.get('http://reddit.com/.json'))
+    JSON.parse(RestClient.get('http://reddit.com/.json'))
 
     @listings = []
 
@@ -38,8 +38,6 @@ class App < Sinatra::Base
   end
 
   get '/youtube' do
-
-    #@listings = []
     erb :youtube
   end
 

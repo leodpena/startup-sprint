@@ -19,8 +19,11 @@ post '/subscribe' do
     @city = params[:city]
 
     if !@email.match(/.+@.+/)
-
         full_name = @full_name
+        names = full_name.split(' ')
+
+        @first_name = names[0]
+        @last_name = names[1]
       redirect to('/?error=email&name=' + @full_name + '&city=' + @city)
     end
 

@@ -67,6 +67,10 @@ end
     erb :youtube
 end
 
+get '/splash' do
+    erb :splash
+end
+
 
   get '/schedule' do
     @today = [

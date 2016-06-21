@@ -12,6 +12,7 @@ class App < Sinatra::Base
 
     if !@email.match(/.+@.+/)
       redirect to('/?error=email')
+      full_name = @full_name
     end
 
     erb :subscribe
@@ -24,6 +25,12 @@ class App < Sinatra::Base
     @listings = []
 
     erb :reddit
+  end
+
+  get '/youtube' do
+
+    #@listings = []
+    erb :youtube
   end
 
   get '/schedule' do

@@ -3,13 +3,18 @@ require_relative 'config/environment'
 class App < Sinatra::Base
   get '/' do
     @error = params['error']
+<<<<<<< Updated upstream
     @name = params['name']
     erb :home
+=======
+    erb :splash
+>>>>>>> Stashed changes
   end
 
   get '/home' do
     @error = params['error']
-    redirect to('/')
+    # redirect to('/')
+    erb :home
   end
 
   post '/subscribe' do
@@ -50,6 +55,12 @@ class App < Sinatra::Base
 
     erb :rainbow
   end
+  
+  get '/splash' do
+    
+    erb :splash
+  end
+
 
   get '/team' do
 
@@ -85,6 +96,9 @@ class App < Sinatra::Base
     erb :schedule
   end
 end
+
+
+
 
 class App < Sinatra::Base
   get '/fib/:n' do

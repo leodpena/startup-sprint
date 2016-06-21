@@ -1,18 +1,42 @@
 <div>
+
+<!-- TABLE TEMPLATE
+  <table>
+  <tr>
+    <th> Name </th>
+    <th> Thread pitch (mm) </th>
+  </tr>
+  <tr>
+    <td> M4 </td>
+    <td> 0.7 </td>
+  </tr>
+</table>
+-->
+
   <div class="column">
-    <h3>Today</h3>
-    <ol>
+  <table>
+    <tr>
+    <th> <h3>Today</h3></th>
+  </tr>
+
       <% @today.each do |item| %>
-        <li><%= item.first %>: <%= item.last %></li>
+      <tr>
+        <td><%= item.first %>: <%= item.last %></td>
+      </tr>
       <% end %>
-    </ol>
+  </table>
+
   </div>
+
   <div class="column">
-    <h3>Tomorrow</h3>
-    <ol>
+  <table>
+    <th><h3>Tomorrow</h3></th>
+    <tr>
       <% @tomorrow.each do |item| %>
-        <li><%= item.first %>: <%= item.last %></li>
-      <% end %>
-    </ol>
+        <td><%= item.first %>: <%= item.last %></td>
+    </tr>
+    <% end %>
+  </table>
+
   </div>
 </div>

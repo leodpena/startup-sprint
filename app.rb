@@ -25,9 +25,23 @@ class App < Sinatra::Base
 
   get '/reddit' do
     # TODO: we can probably get the listings with something like:
-    JSON.parse(RestClient.get('http://reddit.com/.json'))
+    #JSON.parse(RestClient.get('http://reddit.com/.json'))
 
-    @listings = []
+    require 'json'
+
+    class Link
+      attr_accessor :title, :url, :thumbnail
+
+      def initialize(title, url, thumbnail)
+        @title = title
+        @url = url
+        @thumbnail = thumbnail
+      end
+    end
+
+    data = JSON.parse(RestClient.get('http://reddit.com/.json'))
+
+    @listings = data['t3'].map { |rd| Link.new(rd['title'], rd['url'], rd['thumbnail'])}
 
     erb :reddit
   end

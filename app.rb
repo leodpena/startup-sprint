@@ -30,11 +30,17 @@ class App < Sinatra::Base
 
     erb :reddit
   end
-  
+
   get '/rainbow' do
-    
+
     erb :rainbow
   end
+
+  get '/team' do
+
+    erb :team
+  end
+
 
   get '/schedule' do
     @today = [
